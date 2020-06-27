@@ -6,13 +6,32 @@ Created on Sat  27 Jun 2020
 
 @author: Caterina Mogno c.mogno@ed.ac.uk
 """
-import xarray as xr
-import pandas as pd
+
+def load_modules():
+    """
+    Load main modules used for analysis.
+
+    """
+    import xarray as xr
+    import numpy as np
+    import pandas as pd
+    import sys
+    sys.path.append('/exports/csce/datastore/geos/users/s1878599/python_code/')
+    import warnings
+    warnings.filterwarnings('ignore')
+
 
 def reset_time_dim(ds):
     """
     Time dimension in WRF-Chem datasets is just the time index [0,1,2,3...].
     This function convert dimension Time as datetime[64].
+
+    :param ds:
+     wrf-chem xarray dataset.
+    :type ds:xarray.Dataset.
+    :return:
+     xarray.Dataset with datetime time dim.
+    :rtype: xarray.Dataset.
     """
     return ds.assign_coords(Time=pd.to_datetime(ds.XTIME.values))
 
