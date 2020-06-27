@@ -7,20 +7,6 @@ Created on Sat  27 Jun 2020
 @author: Caterina Mogno c.mogno@ed.ac.uk
 """
 
-def load_modules():
-    """
-    Load main modules used for analysis.
-
-    """
-    import xarray as xr
-    import numpy as np
-    import pandas as pd
-    import sys
-    sys.path.append('/exports/csce/datastore/geos/users/s1878599/python_code/')
-    import warnings
-    warnings.filterwarnings('ignore')
-
-
 def reset_time_dim(ds):
     """
     Time dimension in WRF-Chem datasets is just the time index [0,1,2,3...].
