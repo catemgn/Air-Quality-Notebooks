@@ -6,7 +6,8 @@ Created on Sat  27 Jun 2020
 
 @author: Caterina Mogno c.mogno@ed.ac.uk
 """
-
+import xarray as xr
+import pandas as pd
 def reset_time_dim(ds):
     """
     Time dimension in WRF-Chem datasets is just the time index [0,1,2,3...].
